@@ -1,0 +1,18 @@
+# Run npm init creates package.json which defines the
+# entry point as expresstut.js
+
+# Install Express by typing npm install --save express
+# in the terminal
+
+# Install the Express Handlebars package
+# npm install --save express-handlebars
+
+#ignore packages installed by npm
+node_modules
+*~
+.DS_Store
+credentials.js
+
+# Create a Git repository with git init
+# Add files with 'git add -A' in the terminal
+# Commit the changes with 'git commit -m "Initial Commit"'

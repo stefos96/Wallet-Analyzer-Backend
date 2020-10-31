@@ -3,20 +3,58 @@ const app = express();
 const path = require('path');
 const router = express.Router();
 
+app.use(express.static(__dirname + '/public'));
+app.set('views', __dirname + '/public/views');
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 app.use(express.static(__dirname + '/css'));
+app.use(express.static(__dirname + '/js'));
+app.use(express.static(__dirname + '/fonts'));
 
-router.get('/',function(req,res){
-  res.sendFile(path.join(__dirname+'/html/index.html'));
-  //__dirname : It will resolve to your project folder.
+app.use(require('body-parser').urlencoded({
+  extended: true
+}));
+
+router.get('/', function (req, res) {
+  res.render('index.html');
 });
 
-router.get('/about',function(req,res){
-  res.sendFile(path.join(__dirname+'/about.html'));
+// post data from receipt creator
+// then renders thankyou.html
+app.post('/receipt_creator', function (req, res) {
+  var products = req.body.product;
+  var productPrices = req.body.product_price;
+  var shopName = req.body.shop;
+
+  var productsArray = {};
+
+  if (products.length === productPrices.length) {
+    products.forEach(function (prod, i) {
+      productsArray[prod] = productPrices[i]
+    });
+  }
+
+  module.exports = {
+    shopName,
+    productsArray
+  };
+
+  const firebaseHandler = require('./js/firebase.js');
+
+  res.render('thankyou.html', {
+    svgText: firebaseHandler.svgText,
+    shopName: shopName,
+    products: products,
+    productPrices: productPrices
+  });
 });
 
-router.get('/sitemap',function(req,res){
-  res.sendFile(path.join(__dirname+'/sitemap.html'));
-});
+// app.use(function (req, res) {
+//   res.type('text/html');
+//   res.status(404);
+//   res.render('404.html');
+// });
 
 //add the router
 app.use('/', router);

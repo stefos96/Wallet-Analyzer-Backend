@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Wallet Analyzer - Create Receipt</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main-style.css'>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div id="main-content">
+        <div>
+            <form class="receipt-form" action="/receipt_creator/" method="POST">
+                <div class="shop-name-wrapper">
+                    <label class="shop-label" for="receipt_creator">Shop: </label>
+                    <input id="receipt_creator" type="text" name="shop" placeholder="Shop Name">
+                </div>
+
+                <p class="items-header">Items</p>
+                <div class="products-wrapper">
+                    <div class="product">
+                        <input type="text" name="product" placeholder="Product Name">
+                        <input type="number" step="any" name="product_price" placeholder="Price">
+                    </div>
+                </div>
+
+                <a href="#" id="add-product">+</a>
+
+                
+
+                <input class="btn" type="submit" value="Create Receipt">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

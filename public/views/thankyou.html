@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Wallet Analyzer - Receipt Created</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/main-style.css'>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src='/main.js'></script>
+</head>
+
+<body>
+    <div id="thankyou">
+        <div>
+            <h2>Receipt Created Succesfully</h2>
+
+            <!-- receipt info -->
+            <div class="receipt">
+                <h3><%= shopName %></h3>
+                <div class="products-wrapper">
+
+                    <% products.forEach(function(product, index){ %>
+                    <div class="product">
+                        <div class="name">
+                            <%- product %>
+                        </div>
+                        <div class="price">
+                            <%- productPrices[index] %>
+                        </div>
+                    </div>
+                    <% }); %>
+
+                </div>
+
+                <!-- svg -->
+                <div class="svg-wrapper">
+                    <%- svgText %>
+                </div>
+                <!-- end svg -->
+
+
+            </div>
+            <!-- end receipt info -->
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>

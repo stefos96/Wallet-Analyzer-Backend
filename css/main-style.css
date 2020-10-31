@@ -1,3 +1,138 @@
-h1, h2, h3, h4, h5, p, a, span, button {
+/* default values */
+@font-face {
+    font-family: 'Roboto';
+    src: url('./Roboto/Roboto-Regular.ttf');
+}
+
+:focus {
+    outline: none;
+    box-shadow: 0px 0px 14px 2px #8671ff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+span,
+button,
+label,
+form,
+input {
     font-family: Roboto;
 }
+
+input {
+    border-radius: 4px;
+    border: 0px;
+    padding: 8px;
+}
+
+body {
+    background: linear-gradient(135deg, #353643, #4B4E6A);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* end default values */
+
+.receipt-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.receipt-form>div {
+    padding: 10px 0px;
+    min-width: 500px;
+}
+
+.shop-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shop-name-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label.shop-label {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.items-header {
+    color: white;
+    margin-bottom: 0px;
+}
+
+.product {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+#add-product {
+    margin-bottom: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 10px 28px;
+    background: #8671ff;
+    color: white;
+    font-size: 16px;
+    border-radius: 40px;
+}
+
+/* 404 */
+#page-404 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+}
+
+#page-404 p {
+    color: white;
+    margin: 0px;
+}
+
+#page-404 h2 {
+    color: #11e080;
+}
+/* end 404 */
+
+/* thankyou page */
+#thankyou {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 50px;
+}
+
+#thankyou h2 {
+    color: #11e080;
+}
+
+#thankyou .receipt {
+    padding: 20px;
+    background: white;
+}
+/* end thankyou */

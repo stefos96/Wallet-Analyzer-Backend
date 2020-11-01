@@ -134,6 +134,12 @@ label.shop-label {
 #thankyou .receipt {
     padding: 20px;
     background: white;
+    font-family: Roboto;
+}
+
+#thankyou .receipt h5 {
+    margin: 0px;
+    margin-bottom: 2px;
 }
 
 #thankyou .product {
@@ -142,3 +148,13 @@ label.shop-label {
     margin-bottom: 10px;
 }
 /* end thankyou */
+
+.shop-info-wrapper > div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+}
+
+.shop-info-label {
+    color: white;
+}

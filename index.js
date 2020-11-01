@@ -30,20 +30,39 @@ app.post('/receipt_creator', function (req, res) {
   var productPrices = req.body.product_price;
   var shopName = req.body.shop;
 
+  var type = req.body.type;
+  var afm = req.body.afm;
+  var address = req.body.address;
+  var phone = req.body.phone;
+  var date = req.body.date;
+
+  var info = {
+    type,
+    afm,
+    address,
+    phone,
+    date
+  }
+
   var productsArray = {};
 
   // TODO: check array
   if (products instanceof Array) {}
 
+  var totalPrice = 0.0;
+
   if (products.length === productPrices.length) {
     products.forEach(function (prod, i) {
-      productsArray[prod] = productPrices[i]
+      productsArray[prod] = productPrices[i];
+      totalPrice += parseFloat(productPrices[i]);
     });
   }
 
   module.exports = {
     shopName,
-    productsArray
+    productsArray,
+    totalPrice,
+    info
   };
 
   const firebaseHandler = require('./js/firebase.js');
@@ -52,7 +71,9 @@ app.post('/receipt_creator', function (req, res) {
     svgText: firebaseHandler.svgText,
     shopName: shopName,
     products: products,
-    productPrices: productPrices
+    productPrices: productPrices,
+    totalPrice: totalPrice,
+    info: info
   });
 });
 

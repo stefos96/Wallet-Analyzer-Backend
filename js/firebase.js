@@ -2,6 +2,8 @@ const data = require('../index.js')
 
 var shopName = data.shopName
 var productsArray = data.productsArray
+var totalPrice = data.totalPrice
+var info = data.info
 
 
 // Firebase App (the core Firebase SDK) is always required and
@@ -39,12 +41,12 @@ var database = firebase.database();
 
 var receipt = {
     shop_name: shopName,
-    products: productsArray
+    items: productsArray,
+    final_price: totalPrice,
+    info: info
 }
 
 var key = database.ref().child('barcodes').push(receipt).key;
-console.log(key);
-
 
 var JsBarcode = require('jsbarcode');
 

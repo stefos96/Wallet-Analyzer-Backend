@@ -17,8 +17,16 @@
             <h2>Receipt Created Succesfully</h2>
 
             <!-- receipt info -->
-            <div class="receipt">
-                <h3><%= shopName %></h3>
+            <div class="receipt" id="receipt">
+                <div class="info-wrapper">
+                    <div><%= shopName %></div>
+                    <div><%= info['type'] %></div>
+                    <div><%= info['afm'] %></div>
+                    <div><%= info['address'] %></div>
+                    <div><%= info['phone'] %></div>
+                </div>
+
+
                 <div class="products-wrapper">
 
                     <% products.forEach(function(product, index){ %>
@@ -43,12 +51,6 @@
 
             </div>
             <!-- end receipt info -->
-
-            <script>
-                
-            </script>
-
-
 
         </div>
     </div>

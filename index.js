@@ -12,6 +12,9 @@ app.use(express.static(__dirname + '/css'));
 app.use(express.static(__dirname + '/js'));
 app.use(express.static(__dirname + '/fonts'));
 
+var favicon = require('serve-favicon');
+app.use(favicon(path.join(__dirname, 'public', 'images', 'wallet_icon.ico')));
+
 app.use(require('body-parser').urlencoded({
   extended: true
 }));

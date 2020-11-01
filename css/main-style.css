@@ -135,4 +135,10 @@ label.shop-label {
     padding: 20px;
     background: white;
 }
+
+#thankyou .product {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
 /* end thankyou */

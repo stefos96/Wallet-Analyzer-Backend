@@ -29,6 +29,9 @@ app.post('/receipt_creator', function (req, res) {
 
   var productsArray = {};
 
+  // TODO: check array
+  if (products instanceof Array) {}
+
   if (products.length === productPrices.length) {
     products.forEach(function (prod, i) {
       productsArray[prod] = productPrices[i]
